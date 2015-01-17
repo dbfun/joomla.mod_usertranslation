@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0">
+	<name>mod_usertranslation</name>
+	<author>Mycomponent</author>
+	<creationDate>12 April 2012</creationDate>
+	<copyright>All rights reserved</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>geoip@mycomponent.ru</authorEmail>
+	<authorUrl>mycomponent.ru</authorUrl>
+	<version>0.0.1</version>
+	<description>Перевод текстов с помощью пользователей</description>
+	<files folder="site">
+		<filename module="mod_usertranslation">mod_usertranslation.php</filename>
+		<filename>index.html</filename>
+		<filename>.htaccess</filename>
+		<filename>ajax.php</filename>
+		<filename>jquery-1.7.1.min.js</filename>
+		<filename>usertranslation.js</filename>
+		<filename>usertranslation.css</filename>
+		<folder>tmpl</folder>
+		
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.mod_usertranslation.ini</language>
+		<language tag="en-GB">ru-RU.mod_usertranslation.ini</language>
+	</languages>
+
+	<params>
+		<param name="@spacer" type="spacer" default="DB_AND_TABLE" label="" description="" />
+		<param name="dbtype" type="radio" default="0" label="USE_DB" description="">
+		<option value="1">USE_ACTUAL_DB</option>
+		<option value="0">USE_LISTED_BELOW_DB</option>
+		</param>
+
+		<param name="db" type="text" default="" label="DB_NAME" description="" />
+		<param name="user" type="text" default="" label="USER_NAME" description="" />
+		<param name="password" type="text" default="" label="USER_PASSWORD" description="" />
+		<param name="table" type="text" default="" label="DB_TABLE" description="" />
+		
+		<param name="@spacer" type="spacer" default="COLS_NAMES" label="" description="" />	
+		<param name="tbl_primary_key" type="text" default="md5" label="PRIMARY_KEY" description="" />
+		<param name="tbl_source" type="text" default="text" label="SOURCE_TEXT_FOR_TRANSLATION" description="" />
+		<param name="tbl_dest" type="text" default="translation" label="TRANSLATED_TEXT_DEST" description="" />
+		<param name="tbl_check" type="text" default="checked" label="CHECK_TRANSLATION" description="" />
+		<param name="tbl_ip" type="text" default="ip" label="TRANSLATOR_IP" description="" />
+		<param name="translator" type="radio" default="0" label="ACCEPT_TRANSLATION_FROM" description="">
+			<option value="0">ALL_USERS</option>
+			<option value="1">ONLY_REGISTERED</option>
+		</param>
+		<param name="tbl_user_id" type="text" default="user_id" label="TRANSLATOR_ID" description="" />
+		
+		<param name="@spacer" type="spacer" default="AJAX" label="" description="" />
+		<param name="enable_jquery" type="radio" default="1" label="ENABLE_JQUERY" description="">
+			<option value="1">YES</option>
+			<option value="0">NO</option>
+		</param>
+		<param name="jquery_source" type="radio" default="1" label="JQUERY_SOURCE" description="">
+			<option value="1">LOCALHOST</option>
+			<option value="0">GOOGLE_CODE</option>
+		</param>
+		
+	</params>	
+	<params group="other">
+		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+	</params>
+		
+
+	
+</install>
